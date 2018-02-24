@@ -1,10 +1,8 @@
 // Imports
 let net = require('net');
 let fs = require('fs');
-// let sharp = require('sharp');
 
 // Ports
-const LOG_PORT = 3000;
 const PROTOCOL_PORT = 3001;
 
 // Message IDs
@@ -12,19 +10,23 @@ const GENERATOR_STATUS_MSG = 1;
 const ULTRASONIC_MSG = 2;
 const IMAGE_MSG = 3;
 
-// Set up log port
-net.createServer({}, connection => {
-    connection.on('data', buffer => {
-        handleLog(Buffer.from(buffer, 1));
-    });
-}).listen(LOG_PORT);
-
 // Set up protocol port
 let conn;
-net.createServer({}, connection => {
-    conn = connection;
+net.createServer({}, socket => {
+    document.querySelector('#status').innerHTML = '🔵';
+
+    conn = socket;
     let buf = Buffer.alloc(0);
-    connection.on('data', data => {
+
+    socket.on('error', err => {
+        console.log("ERROR: " + err);
+    });
+
+    socket.on('close', () => {
+        console.log("Socket Closed!");
+    });
+
+    socket.on('data', data => {
 
         buf = Buffer.concat([buf, data]);
 
@@ -42,7 +44,6 @@ net.createServer({}, connection => {
                 }
                 break;
             case IMAGE_MSG:
-                console.log("Content Length: " + buf.readUInt32LE(1));
                 if (buf.length >= 5 && buf.length - 5 >= buf.readUInt32LE(1)) {
                     handleImage(buf.slice(5));
                     buf = buf.slice(5 + buf.readUInt32LE(1));

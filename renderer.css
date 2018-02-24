@@ -33,6 +33,14 @@ table td {
     transform: translate(-50%, -50%);
 }
 
+#status {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+
+    font-size: 24px;
+}
+
 #control-panel {
     height: 90%;
 }
@@ -50,6 +58,10 @@ table td {
     height: 100%;
     /*overflow-y: scroll;*/
     /*float: left;*/
+}
+
+#img {
+    transform: rotate(180deg);
 }
 
 #estop {
