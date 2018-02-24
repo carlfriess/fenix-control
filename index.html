@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fenix Control</title>
+    <link rel="stylesheet" type="text/css" href="renderer.css"/>
+    <link rel="stylesheet" type="text/css" href="node_modules/imperavi-kube/dist/css/kube.min.css"/>
+</head>
+
+<body>
+<div id="header">
+    <span>Fenix Control</span>
+</div>
+
+<table id="control-panel">
+    <col width="30%">
+    <col width="30%">
+    <col width="40%">
+    <tbody>
+    <tr>
+        <td>
+            <table id="generator-table">
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td id="generator1">⚪</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="generator0">⚪</td>
+                    <td></td>
+                    <td id="generator2">⚪</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <table id="ultrasonic-table">
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id="ultrasonic-forward">?</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>⬆</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="ultrasonic-left">?</td>
+                    <td>⬅</td>
+                    <td id="ultrasonic-down">?</td>
+                    <td>➡</td>
+                    <td id="ultrasonic-right">?</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>⬇</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id="ultrasonic-backward">?</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td style="max-height: 100%;" rowspan="2">
+            <textarea readonly id="log"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center; vertical-align: middle;"><img id="img" src="" height="300px"/></td>
+    </tr>
+    </tbody>
+</table>
+<button id="estop" onclick="emergencyStop()">H</button>
+
+<!-- Load the Javascript magic! -->
+<script src="renderer.js"></script>
+</body>
+
+</html>

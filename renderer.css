@@ -1,0 +1,62 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    padding-top: 10%;
+}
+
+table td {
+    padding: 5px;
+}
+
+#header {
+    position: absolute;
+    display: inline-block;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 10%;
+
+    background-color: #333333;
+    color: white;
+
+}
+
+#header span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#control-panel {
+    height: 90%;
+}
+
+#generator-table {
+    text-align: center;
+}
+
+#ultrasonic-table {
+    text-align: center;
+}
+
+#log {
+    /*position: relative;*/
+    height: 100%;
+    /*overflow-y: scroll;*/
+    /*float: left;*/
+}
+
+#estop {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+
+    background-color: darkred;
+    border-radius: 100px;
+}

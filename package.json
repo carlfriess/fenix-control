@@ -1,0 +1,20 @@
+{
+    "name": "fenix-control",
+    "version": "1.0.0",
+    "description": "Fenix control to Major Tom.",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "install-deps": "export npm_config_target=1.6.1\nexport npm_config_arch=x64\nexport npm_config_target_arch=x64\nexport npm_config_disturl=https://atom.io/download/electron\nexport npm_config_runtime=electron\nexport npm_config_build_from_source=true\nHOME=~/.electron-gyp npm install"
+    },
+    "repository": "https://github.com/carlfriess/fenix-control",
+    "keywords": [],
+    "author": "Turtle Squad",
+    "devDependencies": {
+        "electron": "^1.8.2"
+    },
+    "dependencies": {
+        "imperavi-kube": "^6.5.2",
+        "sharp": "^0.19.0"
+    }
+}
