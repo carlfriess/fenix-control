@@ -33,13 +33,13 @@ net.createServer({}, socket => {
         switch (buf.readUInt8(0)) {
             case GENERATOR_STATUS_MSG:
                 if (buf.length >= 2) {
-                    handleGenerator(data.slice(1));
+                    handleGenerator(buf.slice(1));
                     buf = buf.slice(2);
                 }
                 break;
             case ULTRASONIC_MSG:
                 if (buf.length >= 21) {
-                    handleUltrasonic(data.slice(1));
+                    handleUltrasonic(buf.slice(1));
                     buf = buf.slice(21);
                 }
                 break;
